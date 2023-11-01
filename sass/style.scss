@@ -1,0 +1,89 @@
+@use "./colors";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-image: url("../img/forest-6137728_1920.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.box {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 300px;
+	width: 500px;
+	border-radius: 12px;
+	backdrop-filter: blur(5px);
+	.fa-brands {
+		position: relative;
+		font-size: 4rem;
+		color: #fff;
+		padding: 0.3em;
+		transition: color 0.3s;
+		cursor: pointer;
+	}
+	::after {
+		position: absolute;
+		opacity: 0;
+		font-size: 2rem;
+		top: -25%;
+		left: 50%;
+		transform: translate(-50%);
+		color: #fff;
+		transition: opacity 0.3s;
+	}
+	.fa-facebook::after {
+		content: "Facebook";
+	}
+	.fa-instagram::after {
+		content: "Instagram";
+	}
+	.fa-discord::after {
+		content: "Discord";
+	}
+	.fa-twitter::after {
+		content: "Twitter";
+	}
+	.fa-facebook:hover::after {
+		opacity: 1;
+	}
+	.fa-facebook:hover {
+		color: colors.$facebook;
+	}
+	.fa-instagram:hover::after {
+		opacity: 1;
+	}
+	.fa-instagram:hover {
+		background: colors.$instagram;
+		color: transparent;
+		background-clip: text;
+	}
+	.fa-discord:hover::after {
+		opacity: 1;
+	}
+	.fa-discord:hover {
+		color: colors.$discord;
+	}
+	.fa-twitter:hover::after {
+		opacity: 1;
+	}
+	.fa-twitter:hover {
+		color: colors.$twitter;
+	}
+}
